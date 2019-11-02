@@ -30,7 +30,7 @@ function nrzi(signal) {
     result += '0';
   }
 
-  for (let i=1; i<signal.length; i++) {
+  for (let i=1; i<signal.length-1; i++) {
     let cur = signal[i];
     let next = signal[i+1];
     let prev = signal[i-1];
