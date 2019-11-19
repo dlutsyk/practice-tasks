@@ -47,16 +47,13 @@ function isIncome(substr, str) {
 
 function isUnique(word, restWords) {
     for (let subLength = 0; subLength < word.length; subLength++) {
-        for (let j = 0; j < word.length; j++) {
-            let subWord = word.substr(j, subLength);
-            if (subWord.length < subLength) {
-                break;
-            }
-            for (let k = 0; k < restWords.length; k++) {
-                if (!isIncome(subWord, restWords)) {
-                    return subWord;
-                }
-            }
+        for (let j = 0; j < word.length - subLength + 1; j++) {
+          let subWord = word.substr(j, subLength);
+          for (let k = 0; k < restWords.length; k++) {
+              if (!isIncome(subWord, restWords)) {
+                  return subWord;
+              }
+          }
         }
     }
 }
