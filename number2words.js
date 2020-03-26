@@ -42,7 +42,7 @@ const n = {
     1000: 'thousand'
 };
 
-function numtostring(num) {
+function number2words(num) {
     return calc(num);
 }
 
@@ -86,9 +86,7 @@ function thousands(s) {
             t = parseInt(tail(s, 3));
     }
 
-    return t
-        ? [calc(fn), n[1000], calc(t)].join(' ')
-        : [n[fn], n[1000]].join(' ')
+    return [calc(fn), n[1000], calc(t)].join(' ');
 }
 
 function calc(num) {
